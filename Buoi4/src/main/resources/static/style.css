@@ -1,0 +1,11 @@
+.listCourse {
+    display: flex;
+    flex-direction: row;
+}
+
+.course{
+    display: flex;
+    flex-direction: row;
+
+}
+

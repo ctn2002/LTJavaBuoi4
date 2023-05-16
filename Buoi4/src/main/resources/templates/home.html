@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="../static/style.css">
+</head>
+<body>
+<div layout:fragment="content" class="row"  >
+  <ul class="listCourse" style="list-style-type: none">
+    <li th:each="course : ${listCourse}" class="course" style="margin: 5px">
+        <div class="row">
+      <div  style="background-color:red; display:flex; flex-direction:column; color:white; padding-left:4px; padding-right: 4px; border-radius: 5px; margin-right: 3px; width: 100px; text-align: center" >
+        <span th:text="${course.getStartDate().getDayOfMonth()}"/>
+        <span th:text="${course.getStartDate().getMonth()}"/>
+        <span th:text="${course.getStartDate().getYear()}"/>
+      </div>
+      <div style="display:flex; flex-direction:column">
+        <span th:text="${course.getLectureName()}" />
+        <span th:text="${course.getPlace()}" />
+      </div>
+        </div>
+    </li>
+  </ul>
+</div>
+</body>
+</html>
